@@ -1,0 +1,29 @@
+<h4>My Contacts</h4>
+
+<div class="row" *ngIf="contacts?.length>0 then contactTable else noContacts">
+</div>
+
+<ng-template #contactTable>
+
+  <div class="row">
+    <div class="col s3" *ngFor="let contact of contacts">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://img2.freepng.es/20180612/ih/kisspng-computer-icons-avatar-user-profile-clip-art-5b1f69f0e68650.4078880515287853929442.jpg">
+        </div>
+        <div class="card-content center">
+          <span class="card-title activator grey-text text-darken-4">{{contact.nombre}}</span>
+          <span class="card-title grey-text text-darken-4">{{contact.celular}}</span>
+          <p>{{contact.correo}}</p>
+          <p><a [routerLink]="['contacts', contact.id]">Ver Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noContacts>
+  <div class="col s12">
+    <h5>you don't have any contacts.</h5>
+  </div>
+</ng-template>

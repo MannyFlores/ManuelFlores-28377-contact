@@ -1,0 +1,65 @@
+ <h4>Add Contact</h4>
+<div class="row">
+  <div class="col s12 m4">
+    <img src="https://img2.freepng.es/20180612/ih/kisspng-computer-icons-avatar-user-profile-clip-art-5b1f69f0e68650.4078880515287853929442.jpg">
+  </div>
+
+
+ <form class="col s12" [formGroup]="contactForm" (ngSubmit)= "onSumit()">
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_box</i>
+        <input formControlName="id" id="id" type="text" class="validate">
+        <label for="id">ID</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="nombre" id="nombre" type="text" class="validate">
+        <label for="nombre">Nombre</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input formControlName="celular" id="celular" type="text" class="validate">
+        <label for="celular">Celular</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">email</i>
+        <input formControlName="correo" id="correo" type="email" class="validate">
+        <label for="correo">Email</label>
+      </div>
+    </div>
+
+    <button class="waves-effect waves-light black btn">Add</button>
+
+    <div id="exito" class="modal">
+      <div class="modal-content">
+        <h4>Excelente</h4>
+        <p>Contacto nuevo creado</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+      </div>
+    </div>
+
+    <div id="falta" class="modal">
+      <div class="modal-content">
+        <h4>ups!!</h4>
+        <p>favor de llenar todos los campos</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+      </div>
+    </div>
+
+  </form>
+</div>
